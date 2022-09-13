@@ -1,0 +1,35 @@
+import java.util.*;
+public class sol{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        while(n-->0){
+            int index =1;
+            int len = sc.nextInt();
+            int[] arr = new int[len];
+            for(int i =0;i<len;i++){
+                arr[i] =sc.nextInt();
+            }
+            for(int i =0;i<len-1;i++){
+                if(arr[0]!=arr[1] && arr[1]==arr[2])
+                {
+                    index = 1;
+                    break;
+                }
+                else if(arr[len-1]!=arr[len-2] && arr[len-2]==arr[len-3])
+                {
+                    index = len;
+                    break;
+                }
+                else if(arr[i]!=arr[i+1]){
+                    index = index +(i+1);
+                    break;
+                    
+                }
+            }
+            System.out.println(index);
+        }
+        
+    }
+}
